@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+   <script type="text/javascript" src="jquery.selectallcheckbox.js"></script>
+
+   <script type="text/javascript">
+      function onChange(checkboxes, checkedState) {
+
+         for (var i = 0; i < checkboxes.length; i++) {
+            var box = checkboxes[i];
+            var line = box.attr("id") + " : " + (box.prop("checked") ? "checked" : "unchecked") + "<br/>";
+         }
+      }
+
+      $(document).ready(function () {
+         $("#expertisegroup").selectAllCheckbox({
+            checkboxesName: "yourexpertise",
+            onChangeCallback: onChange
+         });
+      });
+   </script>
+
+   <style type="text/css">
+      html,
+      body {
+         padding-top: 0;
+         margin-top: 0;
+      }
+
+      label {
+         display: block;
+      }
+
+      .selectAllLabel {
+         font-size: larger;
+         font-weight: bold;
+      }
+
+      #container {
+         width: 400px;
+      }
+
+      #container,
+      #checkboxes,
+      #log {
+         display: table-cell;
+         min-width: 350px;
+         vertical-align: middle;
+         padding: 10px;
+      }
+
+      #checkboxes,
+      #log {
+         border: 1px solid #000000;
+      }
+   </style>
+
+</head>
+
+<body>
+   <div id="container">
+      <div id="checkboxes">
+         <h3>Your Expertise (indeterminate)</h3>
+         <label class="selectAllLabel">
+            <input type="checkbox" id="expertisegroup" />
+            Select All
+         </label>
+         <label>
+            <input type="checkbox" id="jQuery" name="yourexpertise" value="jQuery" />
+            jQuery
+         </label>
+         <label>
+            <input type="checkbox" id="JavaScript" name="yourexpertise" value="JavaScript" />
+            JavaScript
+         </label>
+         <label>
+            <input type="checkbox" id="Bootstrap" name="yourexpertise" value="Bootstrap" />
+            Bootstrap
+         </label>
+         <label>
+            <input type="checkbox" id="CSS" name="yourexpertise" value="CSS" />
+            CSS
+         </label>
+         <label>
+            <input type="checkbox" id="HTML" name="yourexpertise" value="HTML" />
+            HTML
+         </label>
+      </div>
+   </div>
+   
+   
+
+   
+</body>
+
+</html>
